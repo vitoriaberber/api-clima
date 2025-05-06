@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima atual</title>
+    <link rel="stylesheet" href="assets/style/reset.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+    <main class="principal">
+        <img id="imagem-clima" src="assets/img/sol.png" alt="Sol">
+
+        <h1>Clima atual <span id="nome-da-cidade"></span></h1>
+
+        <form action="#">
+            <label for="cidade">
+                <input type="text" name="cidade" id="cidade" placeholder="Digite o nome da cidade">
+            </label>
+            <div>
+                <button type="button" id="btn">Buscar</button>
+                <input type="reset" value="Limpar" id="btn-limpar">
+            </div>
+        </form>
+
+        <div id="texto">
+        </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
