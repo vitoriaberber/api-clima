@@ -3,7 +3,6 @@ const nomeDaCidadeNoSpanDoTitulo = document.getElementById('nome-da-cidade')
 const btn = document.getElementById('btn');
 const btnLimpar = document.getElementById('btn-limpar');
 const textoDasTemperaturas = document.getElementById('texto')
-textoDasTemperaturas.style.display = 'none';
 
 btn.addEventListener('click', () => {
     const cidade = document.getElementById('cidade').value;
@@ -15,6 +14,9 @@ btn.addEventListener('click', () => {
 async function buscarAPI(urlAPI, cidade) {
     try {
         limparTexto();
+        textoDasTemperaturas.classList.remove('esconder');
+        textoDasTemperaturas.classList.add('aparecer')
+        textoDasTemperaturas.innerHTML = 'Carregando...'
         const conexao = await fetch(`${urlAPI}`);
         const conexaoConvertida = await conexao.json();
         console.log(conexaoConvertida);
@@ -28,6 +30,7 @@ async function buscarAPI(urlAPI, cidade) {
 }
 
 function mostrarTexto(conexaoConvertida){
+    textoDasTemperaturas.innerHTML = '';
     const tempMinima = document.createElement('p');
     tempMinima.classList.add('tempMinima');
     tempMinima.innerHTML = `Temperatura Miníma: <span class="temperaturas">${conexaoConvertida.main.temp_min}</span>`;

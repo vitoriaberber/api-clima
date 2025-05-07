@@ -58,7 +58,11 @@ body {
     cursor: pointer;
 }
 
-.principal div#texto{
+.esconder {
+    display: none;
+}
+
+.aparecer{
     display: flex;
     flex-direction: column;
     gap: .5rem;
